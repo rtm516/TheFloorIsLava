@@ -2,6 +2,7 @@
 A simple spigot plugin that adds the floor is lava to minecraft. This idea was not by me but I created a plugin for it.
 
 TODO:
+ - Test other versions
  - Config
 	- Custom timers
 	- Custom block
