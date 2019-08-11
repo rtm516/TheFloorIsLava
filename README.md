@@ -6,10 +6,11 @@ To start the game run '/start' if your OP or have the permission thefloorislava.
 TODO:
  - Test other versions
  - ~~Permission (thefloorislava.start)~~
- - Config
-	- Custom timers
+ - ~~Config~~
+	- ~~Custom timers~~
 	- ~~Custom block~~
 	- ~~Custom border size~~
+	- ~~Custom increase amount~~
 
 ### Screenshots:
 ![Chat countdown](https://i.imgur.com/d8lltb7.jpg)

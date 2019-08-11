@@ -27,7 +27,7 @@ public class CommandStart implements CommandExecutor {
 			public void run() {
 				doLava();
 			}
-		}, 20L * 60L * 20L - (20L * 10L));
+		}, 20L * 60L * ((long) TheFloorIsLava.instance.getConfig().getInt("gracePeriod")) - (20L * 10L));
 
 		return true;
 	}
@@ -41,7 +41,7 @@ public class CommandStart implements CommandExecutor {
 	}
 	
 	private void doLava() {
-		//TheFloorIsLava.instance.sendMessage("10s until next lava rise");
+		TheFloorIsLava.instance.sendMessage("10s until next lava rise");
 
 		TheFloorIsLava.instance.getServer().getScheduler().scheduleSyncDelayedTask(TheFloorIsLava.instance, new Runnable() {
 			public void run() {

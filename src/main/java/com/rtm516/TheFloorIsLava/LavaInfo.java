@@ -14,14 +14,18 @@ public class LavaInfo {
 		this.topLeft = topLeft;
 		this.currentLevel = currentLevel;
 		
+		int increaseAmount = TheFloorIsLava.instance.getConfig().getInt("increaseAmount");
+		
 		this.bottomRight.setY(this.currentLevel);
-		this.topLeft.setY(this.currentLevel);
+		this.topLeft.setY(this.currentLevel + increaseAmount - 1);
 	}
 	
 	public void IncreaseCurrentLevel() {
-		this.currentLevel++;
+		int increaseAmount = TheFloorIsLava.instance.getConfig().getInt("increaseAmount");
+		
+		this.currentLevel += increaseAmount;
 		
 		this.bottomRight.setY(this.currentLevel);
-		this.topLeft.setY(this.currentLevel);
+		this.topLeft.setY(this.currentLevel + increaseAmount - 1);
 	}
 }

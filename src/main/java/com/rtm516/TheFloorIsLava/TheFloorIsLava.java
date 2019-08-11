@@ -56,6 +56,10 @@ public class TheFloorIsLava extends JavaPlugin {
     	return lavaInfo;
     }
     
+    public FileConfiguration getConfig() {
+    	return configuration;
+    }
+    
     public Material getBlock() {
     	return Material.getMaterial(configuration.getString("block"));
     }
