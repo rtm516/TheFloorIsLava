@@ -6,3 +6,7 @@ commands:
    start:
       description: Starts TheFloorIsLava
       usage: /start
+permissions:
+   thefloorislava.start:
+      description: Allows the player to start the game
+      default: op

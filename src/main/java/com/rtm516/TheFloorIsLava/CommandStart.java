@@ -9,11 +9,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.md_5.bungee.api.ChatColor;
-
 public class CommandStart implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if (sender instanceof Player) {
+            Player player = (Player) sender;
+
+            if (!player.hasPermission("thefloorislava.start")) {
+            	return false;
+            }
+        }
+		
 		TheFloorIsLava.instance.sendMessage("Starting The Floor Is Lava!");
 		TheFloorIsLava.instance.sendMessage("20 minutes until the first lava rise");
 		
@@ -34,7 +40,7 @@ public class CommandStart implements CommandExecutor {
 		}, 20L * 60L - (20L * 10L));
 	}
 	
-	private void doLava() {		
+	private void doLava() {
 		//TheFloorIsLava.instance.sendMessage("10s until next lava rise");
 
 		TheFloorIsLava.instance.getServer().getScheduler().scheduleSyncDelayedTask(TheFloorIsLava.instance, new Runnable() {

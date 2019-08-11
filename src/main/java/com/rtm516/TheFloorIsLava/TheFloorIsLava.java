@@ -1,25 +1,39 @@
 package com.rtm516.TheFloorIsLava;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import net.md_5.bungee.api.ChatColor;
 
 public class TheFloorIsLava extends JavaPlugin {
 	public static TheFloorIsLava instance;
+	FileConfiguration configuration = getConfig();
 	
 	private Location spawn;
 	private LavaInfo lavaInfo;
 	
-	private int size = 200;
-	private int startLevel = 64;
+	private int size;
+	private int startLevel;
 	
     @Override
     public void onEnable() {
     	instance = this;
+    	
+    	configuration.options().copyDefaults(true);
+    	saveConfig();
+    	
+    	size = configuration.getInt("borderSize", 200);
+    	startLevel = configuration.getInt("startHeight", 64);
+    	
+    	//Check material is valid
+    	if (Material.getMaterial(configuration.getString("block")) == null) {
+    		getLogger().info("Invalid block ('" + configuration.getString("block") + "') found in config, using LAVA");
+    		configuration.set("block", "LAVA");
+    	}
+    	
         
         spawn = getServer().getWorlds().get(0).getSpawnLocation();
         
@@ -34,9 +48,6 @@ public class TheFloorIsLava extends JavaPlugin {
         this.getCommand("start").setExecutor(new CommandStart());
     }
     
-    @Override
-    public void onDisable() { }
-    
     public Location getSpawn() {
     	return spawn;
     }
@@ -46,7 +57,7 @@ public class TheFloorIsLava extends JavaPlugin {
     }
     
     public Material getBlock() {
-    	return Material.LAVA;
+    	return Material.getMaterial(configuration.getString("block"));
     }
     
     public void sendMessage(String msg) { 
