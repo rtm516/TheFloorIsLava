@@ -12,6 +12,15 @@ TODO:
 	- ~~Custom border size~~
 	- ~~Custom increase amount~~
 
+### Config
+```YAML
+startHeight: 64
+borderSize: 200
+block: LAVA
+gracePeriod: 20
+increaseAmount: 3
+```
+
 ### Screenshots:
 ![Chat countdown](https://i.imgur.com/d8lltb7.jpg)
 ![Lava rising](https://i.imgur.com/OKx463R.jpg)
