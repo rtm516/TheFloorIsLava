@@ -56,7 +56,7 @@ public class TheFloorIsLava extends JavaPlugin {
     	return lavaInfo;
     }
     
-    public FileConfiguration getConfig() {
+    public FileConfiguration getConfiguration() {
     	return configuration;
     }
     

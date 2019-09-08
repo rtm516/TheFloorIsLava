@@ -21,13 +21,13 @@ public class CommandStart implements CommandExecutor {
         }
 		
 		TheFloorIsLava.instance.sendMessage("Starting The Floor Is Lava!");
-		TheFloorIsLava.instance.sendMessage("20 minutes until the first lava rise");
+		TheFloorIsLava.instance.sendMessage(TheFloorIsLava.instance.getConfiguration().getInt("gracePeriod") + " minutes until the first lava rise");
 		
 		TheFloorIsLava.instance.getServer().getScheduler().scheduleSyncDelayedTask(TheFloorIsLava.instance, new Runnable() {
 			public void run() {
 				doLava();
 			}
-		}, 20L * 60L * ((long) TheFloorIsLava.instance.getConfig().getInt("gracePeriod")) - (20L * 10L));
+		}, 20L * 60L * ((long) TheFloorIsLava.instance.getConfiguration().getInt("gracePeriod")) - (20L * 10L));
 
 		return true;
 	}

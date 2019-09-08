@@ -1,7 +1,8 @@
 name: TheFloorIsLava
 main: com.rtm516.TheFloorIsLava.TheFloorIsLava
-version: 1.1.0
+version: 1.2.0
 author: rtm516
+api-version: 1.14
 commands:
    start:
       description: Starts TheFloorIsLava
