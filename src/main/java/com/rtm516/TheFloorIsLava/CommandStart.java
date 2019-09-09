@@ -37,7 +37,7 @@ public class CommandStart implements CommandExecutor {
 			public void run() {
 				doLava();
 			}
-		}, 20L * 60L - (20L * 10L));
+		}, 20L * ((long) TheFloorIsLava.instance.getConfiguration().getInt("roundTimer")) - (20L * 10L));
 	}
 	
 	private void doLava() {
