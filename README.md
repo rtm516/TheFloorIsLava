@@ -18,6 +18,7 @@ startHeight: 64
 borderSize: 200
 block: LAVA
 gracePeriod: 20
+roundTimer: 60
 increaseAmount: 3
 ```
 
