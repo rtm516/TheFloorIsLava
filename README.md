@@ -14,12 +14,12 @@ TODO:
 
 ### Config
 ```YAML
-startHeight: 64
-borderSize: 200
+startHeight: 0
+borderSize: 5000
 block: LAVA
-gracePeriod: 20
-roundTimer: 60
-increaseAmount: 3
+gracePeriod: 200
+roundTimer: 900
+increaseAmount: 1
 ```
 
 ### Screenshots:
